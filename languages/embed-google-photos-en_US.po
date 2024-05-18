@@ -1,0 +1,229 @@
+# Copyright (C) 2024 Al Amin
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Embed Google Photos 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/embed-google-photos\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-05-17T15:56:56+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: embed-google-photos\n"
+
+#. Plugin Name of the plugin
+msgid "Embed Google Photos"
+msgstr ""
+
+#. Description of the plugin
+msgid "Embed stunning Google Photos galleries directly into your WordPress site with the Google Photos Block plugin."
+msgstr ""
+
+#. Author of the plugin
+msgid "Al Amin"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://profiles.wordpress.org/alamincmt"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8150
+#: dist/editor.js:8164
+msgid "Photos"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8151
+#: dist/editor.js:8220
+msgid "Album List"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8155
+msgid "16:9 - Landscape"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8156
+msgid "4:3 - Horizontal"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8157
+msgid "1:1 - Square"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8158
+msgid "3:4 - Vertical"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8159
+msgid "9:16 - Potrait"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8163
+msgid "All Media"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8165
+msgid "Videos"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8169
+msgid "All"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8170
+msgid "FAVORITES"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8174
+msgid "All Photos"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8175
+msgid "Albums"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8176
+msgid "Favorites"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8180
+msgid "Vertical"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8181
+msgid "Horizontal"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8185
+msgid "General"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8186
+msgid "Style"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8216
+msgid "Google Photos Type"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8217
+msgid "Select Type"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8225
+msgid "Select Album"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8233
+msgid "Feature"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8235
+msgid "Media Type"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8238
+msgid "Image Aspect Ratio"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8239
+msgid "Ratio"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8244
+msgid "Layout"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8259
+msgid "Image"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:8264
+msgid "Load More Button"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12508
+msgid "You must select photos type"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12510
+msgid "Photo Type"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12499
+msgid "Authorization and Access Token Required"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12502
+#: dist/editor.js:12633
+msgid "Authorization"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12630
+msgid "Google Photos Block"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12632
+msgid "Google Photos"
+msgstr ""
+
+#: block.json
+msgctxt "block title"
+msgid "Embed Google Photos"
+msgstr ""
+
+#: block.json
+msgctxt "block description"
+msgid "Embed stunning Google Photos galleries directly into your WordPress site with the Google Photos Block plugin."
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "photos"
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "gallery"
+msgstr ""
+
+#: block.json
+msgctxt "block keyword"
+msgid "block"
+msgstr ""

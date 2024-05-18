@@ -1,0 +1,93 @@
+$primaryColor: #4527a4;
+
+// Custom
+.bdbNowEditing {
+	outline: 2px solid $primaryColor;
+}
+
+.bpgpbSelectArea {
+	background: #00000017;
+	border-radius: 4px;
+	-webkit-box-shadow: 1px 1px 2px 1px #0000002e;
+	box-shadow: 1px 1px 2px 1px #0000002e;
+	padding: 50px;
+	// text-align: center;
+
+	>h2 {
+		background: #ffccba !important;
+		color: #d63503;
+		font-size: 18px !important;
+		font-weight: 400 !important;
+		margin: 0 !important;
+		padding: 10px 0 !important;
+		text-align: center !important;
+	}
+
+	label {
+		font-size: 16px;
+		font-weight: 400;
+		color: #000;
+	}
+
+	button {
+		border: 1px solid #000;
+		font-size: 18px;
+		font-weight: 500;
+		margin-top: 20px;
+		padding: 5px 10px;
+		border-radius: 2px;
+		cursor: pointer;
+	}
+}
+
+.pbgpbPhotoType {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		margin-right: 5px;
+	}
+}
+
+.bpgpbPanelBody {
+	.gpAuthorization {
+		.gpAuthBtn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 17px;
+			font-size: 15px;
+			background-color: #2962ff;
+			color: #fff;
+			font-weight: 500;
+
+			svg {
+				background: #fff;
+				border-radius: 3px;
+			}
+		}
+
+		.gpSignOut {
+			background: #fff !important;
+			border: 1px solid #979191 !important;
+			padding: 5px 20px !important;
+			font-size: 15px !important;
+			font-weight: 500;
+			color: #483d3d !important;
+			box-sizing: border-box !important;
+			line-height: normal !important;
+		}
+
+		button {
+			&:focus {
+				box-shadow: none;
+				outline: none;
+
+			}
+		}
+	}
+}
+
+.loadingIcon {
+	text-align: center;
+}

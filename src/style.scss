@@ -1,0 +1,175 @@
+$primaryColor: #4527a4;
+
+// Common CSS
+html {
+	scroll-behavior: smooth;
+}
+
+// Dashicon
+.dashicons {
+	font-family: dashicons !important;
+}
+
+// Google photos
+.wp-block-bpgpb-google-photos {
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.BPGPBBlockDirectory {
+
+		.layoutSection {
+			display: grid;
+
+			.imgArea {
+
+				.img {
+					position: relative;
+					width: 100%;
+					height: 100%;
+
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						right: 0;
+						text-align: center;
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+
+			.singleAlbum {
+				cursor: pointer;
+
+				.mainImage {
+
+					.img {
+						position: relative;
+						width: 100%;
+						height: 100%;
+						padding-top: 100%;
+
+						img {
+							position: absolute;
+							top: 0;
+							left: 0;
+							bottom: 0;
+							right: 0;
+							text-align: center;
+							height: 100%;
+							width: 100%;
+							object-fit: cover;
+							border-radius: 8px;
+						}
+					}
+				}
+
+				.title {
+					margin: 0;
+					font-size: 16px;
+					font-weight: 500;
+					font-family: "Google Sans", Roboto, Arial, sans-serif;
+					color: #3c4043;
+					margin-top: 8px;
+				}
+
+				.totalCount {
+					color: #5f6368;
+					font-size: 14px;
+					font-weight: 400;
+					font-family: "Google Sans", Roboto, Arial, sans-serif;
+					padding-top: 3px;
+					margin: 0;
+				}
+			}
+		}
+
+		.loadingIcon {
+			text-align: center;
+		}
+
+		.btnArea {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			.loadMoreBtn {
+				margin-top: 15px;
+				cursor: pointer;
+			}
+		}
+
+		.backArrow {
+			display: inline-block;
+			cursor: pointer;
+		}
+
+		.bpgpbTopSection {
+			margin-bottom: 20px;
+			margin-top: 15px;
+			display: flex;
+			align-items: center;
+			gap: 30px;
+
+			h2 {
+				margin: 0px;
+				font-size: 20px;
+				font-weight: 500;
+				color: #000;
+			}
+
+			p {
+				margin: 0;
+				font-size: 16px;
+				font-weight: 400;
+				color: #000;
+			}
+
+			.item {
+				width: 328px;
+				height: 184px;
+				display: block;
+
+				.topImg {
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+					object-fit: cover;
+				}
+			}
+		}
+
+	}
+}
+
+
+/*
+*
+*column set
+*/
+@for $i from 1 through 12 {
+	.columns-#{$i} {
+		grid-template-columns: repeat(#{$i}, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	@for $i from 1 through 12 {
+		.columns-tablet-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	@for $i from 1 through 12 {
+		.columns-mobile-#{$i} {
+			grid-template-columns: repeat(#{$i}, 1fr);
+		}
+	}
+}
