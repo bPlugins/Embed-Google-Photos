@@ -16,6 +16,7 @@ import { getAlbumList } from './utils/functions';
 import useWPOptionMutation from './hooks/useWPOptionMutation';
 import useWPOptionQuery from './hooks/useWPOptionQuery';
 import { loadingIcon } from './utils/icons';
+import useWPAjax from './hooks/useWPAjax';
 const bpgpbEvent = new CustomEvent('bpgpbEventEdit');
 
 const Edit = (props) => {
@@ -23,7 +24,10 @@ const Edit = (props) => {
 	const { photosType, albumId } = attributes;
 
 	const { isLoading: loadingOnSet } = useWPOptionMutation('bpgpb-google-photos', { dataType: 'object' });
-	const { data: token = {}, fetchData, isLoading } = useWPOptionQuery('bpgpb-google-photos');
+	// const { data: token = {}, fetchData, isLoading } = useWPOptionQuery('bpgpb-google-photos');
+	const { isLoading, data: token, refetch: fetchData, error } = useWPAjax('bpgpb_retrieve_access_token', { nonce: window.wpApiSettings?.nonce })
+
+	console.log({ token, error });
 
 	useEffect(() => {
 		clientId && setAttributes({ cId: clientId.substring(0, 10) });

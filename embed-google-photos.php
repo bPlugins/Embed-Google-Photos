@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Embed Google Photos
  * Description: Embed stunning Google Photos galleries directly into your WordPress site with the Google Photos Block plugin.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Al Amin
  * Author URI: https://profiles.wordpress.org/alamincmt
  * License: GPLv3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {exit;}
 if ('localhost' === $_SERVER['HTTP_HOST']) {
     $plugin_version = time();
 } else {
-    $plugin_version = '1.0.0';
+    $plugin_version = '1.0.1';
 
 }
 define('BPGPB_PLUGIN_VERSION', $plugin_version);
@@ -70,17 +70,18 @@ class bpgpb_GooglePhotos
         $token = json_decode(get_option('bpgpb-google-photos'), true);
         $is_not_expired = get_transient('bpgpb_expireTime');
         if (!$is_not_expired && isset($token['refresh_token']) && $token['refresh_token'] != '') {
-            $response = wp_remote_get("https://api.bplugins.com/wp-json/google-photos/v1/refresh-token?refresh_token=" . $token['refresh_token']);
-            $new_token = json_decode(wp_remote_retrieve_body($response));
+            $response = wp_remote_get("https://api.bplugins.com/wp-json/google-photos/v1/refresh-token?refresh_token=" . $token['refresh_token'].'&time='.time());
+            $new_token = json_decode(wp_remote_retrieve_body($response), true);
             if (isset($new_token['access_token'])) {
                 $token['access_token'] = $new_token['access_token'];
                 // update_option('bpgpb_accessToken', $token);
                 update_option('bpgpb-google-photos', wp_json_encode($token));
-                set_transient('bpgpb_expireTime', 3500);
+                set_transient('bpgpb_expireTime', 3500, 3500);
             }
         }
         return $token;
     }
+
 
     public function enqueueBlockAssets()
     {

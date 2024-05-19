@@ -1,9 +1,10 @@
 === Embed Google Photos ===
 Contributors: alamincmt
 Donate link: https://www.buymeacoffee.com/abuhayat
-Tags: block, photos, google photos, gallery,  Gutenberg block
+Tags: block, photos, google photos, gallery, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.5
+Stable tag: 1.0.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +15,7 @@ Embed stunning Google Photos galleries directly into your WordPress site with th
 
 The Embed Google Photos plugin offers a seamless solution for integrating beautiful Google Photos galleries directly into your WordPress website. With its intuitive interface and robust functionality, this plugin simplifies the process of showcasing your photos and galleries in a visually stunning way. Whether you're a photographer, blogger, or business owner, this plugin provides a convenient and efficient way to share your visual content with your audience. With features like customizable layouts, responsive design, and easy-to-use settings, you can effortlessly create and manage your Google Photos galleries with ease. Say goodbye to complex embedding codes and manual updates – streamline your workflow and enhance your website's visual appeal with the Embed Google Photos plugin.
 
-
+**[Demos](https://bplugins.com/products/embed-google-photos/#demos)** | **[Documentation](https://bplugins.com/docs/embed-google-photos/)**  
 
 = Features =
 - Display all photos from Google Photos.
@@ -24,7 +25,6 @@ The Embed Google Photos plugin offers a seamless solution for integrating beauti
 - Set image aspect ratios.
 - Customize the "Load More" button's color, typography, border, and padding.
 - Add borders to images.
-
 
 = How to use =
 - First, install the Embed Google Photos plugin.
@@ -59,9 +59,29 @@ The Embed Google Photos plugin offers a seamless solution for integrating beauti
 
 == Frequently Asked Questions ==
 
-= Is Embed Google Photos free? =
+= Is Embed Google Photos block free? =
 
-Yes, Embed Google Photos is a free Gutenberg block plugin.
+Yes, Embed Google Photos block is a free Gutenberg block plugin.
+
+= Can I show all Google Photos? =
+
+Yes, you can display all Google Photos.
+
+= Can I show just the album list? =
+
+Yes, you can display the entire album list.
+
+= Can I show photos from a specific album only? =
+
+Yes, you can display all images from a specific album.
+
+= Can I filter images and videos? =
+
+Yes, you can filter both images and videos.
+
+= Can I show my favorite images? =
+
+Yes, you can display your favorite images.
 
 = Does it work with any WordPress theme? =
 
@@ -82,16 +102,22 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Screenshots ==
 
-1. Settings 
+1. Settings
 
 
 == Changelog ==
+
+= 1.0.1 - 18 May,2024 =
+* Authorization issues fixed.
 
 = 1.0.0 =
 * Initial Release
 
 
 == Upgrade Notice ==
+
+= 1.0.1 - 18 May,2024 =
+* Authorization issues fixed.
 
 = 1.0.0 =
 * Initial Release

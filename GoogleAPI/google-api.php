@@ -10,6 +10,7 @@ class GooglePhotosAPI
 
     public function __construct()
     {
+        add_action('wp_ajax_bpgpb_retrieve_access_token', [$this, 'bpgpb_retrieve_access_token']);
         add_action('wp_ajax_bpgpb_get_access_token', [$this, 'get_access_token']);
         add_action('wp_ajax_nopriv_bpgpb_get_access_token', [$this, 'get_access_token']);
     }
@@ -43,8 +44,37 @@ class GooglePhotosAPI
         }
 
         update_option('bpgpb-google-photos', wp_json_encode($response));
-        set_transient('bpgpb_expireTime', 3500);
-        wp_send_json_success($response);
+        set_transient('bpgpb_expireTime', 3500, 3500);
+        wp_send_json_success($_POST);
+    }
+
+    public function bpgpb_retrieve_access_token(){
+
+        if (!wp_verify_nonce(sanitize_text_field($_POST['nonce']), 'wp_rest')) {
+            wp_send_json_error('invalid request');
+        }
+
+        $token = json_decode(get_option('bpgpb-google-photos'), true);
+        $is_valid = get_transient('bpgpb_expireTime');
+        
+        if($is_valid){
+            wp_send_json_success($token);
+        }
+
+        if($token['refresh_token']){
+
+            $response = wp_remote_get("https://api.bplugins.com/wp-json/google-photos/v1/refresh-token?refresh_token=" . $token['refresh_token'].'&time='.time());
+            $new_token = json_decode(wp_remote_retrieve_body($response));
+            update_option('bbb_access_token', [time(), date('m'), $new_token]);
+            $token['access_token'] = $new_token['access_token'];
+
+            update_option('bpgpb-google-photos', wp_json_encode($token));
+            set_transient('bpgpb_expireTime', 3500, 3500);
+            wp_send_json_success([$token]);
+        }
+
+        wp_send_json_success([]);
+
     }
 
 }

@@ -38,7 +38,7 @@ const RenderPlugin = () => {
             refetchSavedToken();
         }, 500);
     }
-
+    // console.log({ token });
     return <>
         <PluginSidebarMoreMenuItem target='bpgpb-google-photos'>{__('Google Photos Block', 'embed-google-photos')}</PluginSidebarMoreMenuItem>
 
