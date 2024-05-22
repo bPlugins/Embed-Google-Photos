@@ -36,10 +36,6 @@ const Settings = ({ attributes, setAttributes }) => {
 						{photosType === "albums" && <div className='pbgpbPhotoType'>
 							<div>
 								<SelectControl className='mt10' label={__('Select Album', 'embed-google-photos')} labelPosition="side" value={albumId} options={[{ label: 'Select', value: '' }, ...categoriesOpt]} onChange={val => setAttributes({ albumId: val })} />
-
-								{/* <RadioControl className='mt10' label={__('Select Album', 'embed-google-photos')} selected={albumId} options={albumList.map((album) => {
-									return { label: album.title, value: album.id }
-								})} onChange={val => { setAttributes({ albumId: val }); }} /> */}
 							</div>
 						</div>}
 

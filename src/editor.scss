@@ -51,6 +51,21 @@ $primaryColor: #4527a4;
 
 .bpgpbPanelBody {
 	.gpAuthorization {
+		.bpgpbGetHelp {
+
+			display: flex;
+
+			.components-base-control {
+				width: 100%;
+			}
+
+		}
+
+		.components-input-base {
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
 		.gpAuthBtn {
 			display: flex;
 			align-items: center;

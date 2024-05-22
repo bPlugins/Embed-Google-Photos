@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-19T06:58:42+00:00\n"
+"POT-Creation-Date: 2024-05-21T13:26:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: embed-google-photos\n"
@@ -138,69 +138,89 @@ msgid "Select Album"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8233
+#: dist/editor.js:8229
 msgid "Feature"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8235
+#: dist/editor.js:8231
 msgid "Media Type"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8238
+#: dist/editor.js:8234
 msgid "Image Aspect Ratio"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8239
+#: dist/editor.js:8235
 msgid "Ratio"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8244
+#: dist/editor.js:8240
 msgid "Layout"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8259
+#: dist/editor.js:8255
 msgid "Image"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:8264
+#: dist/editor.js:8260
 msgid "Load More Button"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12564
+#: dist/editor.js:12560
 msgid "You must select photos type"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12566
+#: dist/editor.js:12562
 msgid "Photo Type"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12555
+#: dist/editor.js:12551
 msgid "Authorization and Access Token Required"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12558
-#: dist/editor.js:12689
+#: dist/editor.js:12554
+#: dist/editor.js:12688
 msgid "Authorization"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12686
+#: dist/editor.js:12685
 msgid "Google Photos Block"
 msgstr ""
 
 #: dist/editor.js:1
-#: dist/editor.js:12688
+#: dist/editor.js:12687
 msgid "Google Photos"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12692
+msgid "Client ID"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12693
+msgid "Help"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12696
+msgid "Client Secret"
+msgstr ""
+
+#: dist/editor.js:1
+#: dist/editor.js:12698
+msgid "Refresh Token"
 msgstr ""
 
 #: block.json

@@ -12,7 +12,7 @@ const Layout = ({ attributes, token }) => {
     const [photos, setPhotos] = useState([]);
     const [pageToken, setPageToken] = useState();
     const [loading, setLoading] = useState(false);
-    const [singlePage, setSinglePage] = useState(false)
+    const [singlePage, setSinglePage] = useState(false);
     const [singleAlbumId, setSingleAlbumId] = useState();
     const [singleAlbumDetails, setSingleAlbumDetails] = useState();
 

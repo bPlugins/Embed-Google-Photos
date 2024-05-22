@@ -27,7 +27,7 @@ const Edit = (props) => {
 	// const { data: token = {}, fetchData, isLoading } = useWPOptionQuery('bpgpb-google-photos');
 	const { isLoading, data: token, refetch: fetchData, error } = useWPAjax('bpgpb_retrieve_access_token', { nonce: window.wpApiSettings?.nonce })
 
-	console.log({ token, error });
+	console.log(token);
 
 	useEffect(() => {
 		clientId && setAttributes({ cId: clientId.substring(0, 10) });
