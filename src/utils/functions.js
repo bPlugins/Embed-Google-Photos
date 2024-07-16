@@ -105,6 +105,7 @@ export const getAllPhotos = async (accessToken, pageToken, favorite, media, setL
             headers,
             params
         })
+        console.log("loading.......")
         setLoading(false);
 
         return response;

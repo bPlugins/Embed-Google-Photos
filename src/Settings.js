@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TabPanel, SelectControl, RadioControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl } from '@wordpress/components';
+import { PanelBody, PanelRow, TabPanel, SelectControl, RangeControl, __experimentalUnitControl as UnitControl, __experimentalBoxControl as BoxControl, TextControl, ToggleControl } from '@wordpress/components';
 
 import { produce } from 'immer';
 
@@ -14,8 +14,12 @@ import { favoriteOpt, generalStyleTabs, layoutShowOpt, mediaTypeOpt, photosOpt, 
 
 
 const Settings = ({ attributes, setAttributes }) => {
-	const { photosType, favorite, albumList, albumId, mediaType, columns, columnGap, rowGap, coverImage, imgBorder, loadMoreBtnTypo, loadMoreBtnColors, loadMoreBtnBorder, loadMoreBtnPadding, layoutShow } = attributes;
+	const { photosType, favorite, albumList, albumId, mediaType, columns, columnGap, rowGap, coverImage, imgBorder, loadMoreBtnTypo, loadMoreBtnColors, loadMoreBtnBorder, loadMoreBtnPadding, layoutShow, album } = attributes;
 	const [device, setDevice] = useState('desktop');
+
+	const { title, isTitle } = album;
+
+	console.log(layoutShow);
 
 	// List of Album 
 	const categoriesOpt = albumList?.map((album) => {
@@ -30,14 +34,18 @@ const Settings = ({ attributes, setAttributes }) => {
 						<SelectControl label={__('Select Type', 'embed-google-photos')} labelPosition="side" value={photosType} options={[{ label: 'Select', value: '' }, ...photosOpt]} onChange={(val) => setAttributes({ photosType: val })} />
 
 						{photosType === "albums" && <>
-							<SelectControl className='mt10' label={__('Album List', 'embed-google-photos')} labelPosition="side" value={layoutShow} options={layoutShowOpt} onChange={val => setAttributes({ layoutShow: val })} />
-						</>}
 
-						{photosType === "albums" && <div className='pbgpbPhotoType'>
-							<div>
-								<SelectControl className='mt10' label={__('Select Album', 'embed-google-photos')} labelPosition="side" value={albumId} options={[{ label: 'Select', value: '' }, ...categoriesOpt]} onChange={val => setAttributes({ albumId: val })} />
-							</div>
-						</div>}
+							{
+								layoutShow === "albums" && <> <ToggleControl className='mt10' label={__('Title Show/Hide', 'embed-google-photos')} checked={isTitle} onChange={(val) => setAttributes({ album: { ...album, isTitle: val } })} />
+
+									{isTitle && <TextControl className='mt10' label={__('Title', 'embed-google-photos')} value={title} onChange={(val) => setAttributes({ album: { ...album, title: val } })} />}
+								</>
+							}
+
+							<SelectControl className='mt10' label={__('Album List', 'embed-google-photos')} labelPosition="side" value={layoutShow} options={layoutShowOpt} onChange={val => setAttributes({ layoutShow: val })} />
+
+							<SelectControl className='mt10' label={__('Select Album', 'embed-google-photos')} labelPosition="side" value={albumId} options={[{ label: 'Select', value: '' }, ...categoriesOpt]} onChange={val => setAttributes({ albumId: val })} />
+						</>}
 
 						{photosType === 'photos' && <SelectControl className='mt10' label={__('Feature', 'embed-google-photos')} labelPosition='side' value={favorite} options={favoriteOpt} onChange={val => setAttributes({ favorite: val })} />}
 

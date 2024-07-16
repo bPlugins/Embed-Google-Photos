@@ -10,9 +10,9 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
 
     // PageToken 
     const PageToken = async () => {
-        const photos = await getAlbumPhotos(token, albumId, pageToken, setLoading);
-        setPhotos(photos?.data?.mediaItems);
-        setPageToken(photos?.data?.nextPageToken);
+        const photosData = await getAlbumPhotos(token, albumId, pageToken, setLoading);
+        setPhotos([...photos, ...photosData?.data?.mediaItems]);
+        setPageToken(photosData?.data?.nextPageToken);
     }
 
     // Fancyapps 

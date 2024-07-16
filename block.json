@@ -30,6 +30,8 @@
 		"album": {
 			"type": "object",
 			"default": {
+				"title": "Album List",
+				"isTitle": true,
 				"photosList": true,
 				"albumList": false
 			}

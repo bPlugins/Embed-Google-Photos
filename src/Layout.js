@@ -7,34 +7,37 @@ import Single from './Components/Single';
 
 const Layout = ({ attributes, token }) => {
 
-    const { cId, columns, photosType, albumList, albumId, mediaType, favorite, layoutShow } = attributes;
+    const { cId, columns, photosType, albumList, albumId, mediaType, favorite, layoutShow, album } = attributes;
     const { desktop, tablet, mobile } = columns;
     const [photos, setPhotos] = useState([]);
     const [pageToken, setPageToken] = useState();
-    const [loading, setLoading] = useState(false);
+    const [{ loading }, setLoading] = useState(false);
     const [singlePage, setSinglePage] = useState(false);
     const [singleAlbumId, setSingleAlbumId] = useState();
     const [singleAlbumDetails, setSingleAlbumDetails] = useState();
+
+    const { title, isTitle } = album;
 
     useEffect(() => {
         const getPhotos = async () => {
 
             if (token?.access_token) {
                 if (photosType === 'photos') {
-                    const photos = await getAllPhotos(token?.access_token, null, favorite, mediaType, setLoading);
-                    setPhotos(photos?.data?.mediaItems);
-                    setPageToken(photos?.data?.nextPageToken);
+                    const photosData = await getAllPhotos(token?.access_token, null, favorite, mediaType, setLoading);
+                    setPhotos(photosData?.data?.mediaItems);
+                    setPageToken(photosData?.data?.nextPageToken);
+
                 }
                 else if (photosType === "favorite") {
-                    const photos = await getFavorite(token?.access_token, null, mediaType, setLoading);
-                    setPhotos(photos?.data?.mediaItems);
-                    setPageToken(photos?.data?.nextPageToken);
+                    const photosData = await getFavorite(token?.access_token, null, mediaType, setLoading);
+                    setPhotos(photosData?.data?.mediaItems);
+                    setPageToken(photosData?.data?.nextPageToken);
                 }
 
                 else if (photosType === "albums" && albumId) {
-                    const photos = await getAlbumPhotos(token?.access_token, albumId, null, setLoading);
-                    setPhotos(photos?.data?.mediaItems);
-                    setPageToken(photos?.data?.nextPageToken);
+                    const photosData = await getAlbumPhotos(token?.access_token, albumId, null, setLoading);
+                    setPhotos(photosData?.data?.mediaItems);
+                    setPageToken(photosData?.data?.nextPageToken);
                 }
             }
         }
@@ -59,21 +62,21 @@ const Layout = ({ attributes, token }) => {
     const PageToken = async () => {
 
         if (photosType === 'photos') {
-            const photos = await getAllPhotos(token?.access_token, pageToken, favorite, mediaType, setLoading);
-            setPhotos(photos?.data?.mediaItems);
-            setPageToken(photos?.data?.nextPageToken);
+            const photosData = await getAllPhotos(token?.access_token, pageToken, favorite, mediaType, setLoading);
+            setPhotos([...photos, ...photosData?.data?.mediaItems]);
+            setPageToken(photosData?.data?.nextPageToken);
         }
 
         else if (photosType === 'favorite') {
-            const photos = await getFavorite(token?.access_token, pageToken, mediaType, setLoading);
-            setPhotos(photos?.data?.mediaItems);
-            setPageToken(photos?.data?.nextPageToken);
+            const photosData = await getFavorite(token?.access_token, pageToken, mediaType, setLoading);
+            setPhotos([...photos, ...photosData?.data?.mediaItems]);
+            setPageToken(photosData?.data?.nextPageToken);
         }
 
         else if (photosType === 'albums') {
-            const photos = await getAlbumPhotos(token?.access_token, albumId, pageToken, setLoading);
-            setPhotos(photos?.data?.mediaItems);
-            setPageToken(photos?.data?.nextPageToken);
+            const photosData = await getAlbumPhotos(token?.access_token, albumId, pageToken, setLoading);
+            setPhotos([...photos, ...photosData?.data?.mediaItems]);
+            setPageToken(photosData?.data?.nextPageToken);
         }
     }
 
@@ -87,9 +90,9 @@ const Layout = ({ attributes, token }) => {
 
     // console.log(albumList);
     const clickFetchAlbumData = async (token, albumId, pageToken = null, setLoading) => {
-        const photos = await getAlbumPhotos(token?.access_token, albumId, pageToken, setLoading);
-        setPhotos(photos?.data?.mediaItems);
-        setPageToken(photos?.data?.nextPageToken);
+        const photosData = await getAlbumPhotos(token?.access_token, albumId, pageToken, setLoading);
+        setPhotos(photosData?.data?.mediaItems);
+        setPageToken(photosData?.data?.nextPageToken);
     }
 
     const details = async (albumId) => {
@@ -103,7 +106,7 @@ const Layout = ({ attributes, token }) => {
 
     return <>
         {(layoutShow === "albums" && !singlePage) && <div className='albumMainArea'>
-            <h2>Album List</h2>
+            {isTitle && <h2> {title}</h2>}
             <div className={`layoutSection columns-${desktop} columns-tablet-${tablet} columns-mobile-${mobile}`}>
                 {albumList?.map((album, index) => {
                     return <div key={index} className='singleAlbum'
@@ -125,28 +128,31 @@ const Layout = ({ attributes, token }) => {
                     </div>
                 })}
             </div>
-        </div>}
+        </div >}
 
         {/* single Component */}
         {singlePage && <Single attributes={attributes} token={token?.access_token} photos={photos} setPhotos={setPhotos} albumId={singleAlbumId} pageToken={pageToken} setPageToken={setPageToken} setSinglePage={setSinglePage} setLoading={setLoading} singleAlbumDetails={singleAlbumDetails} />}
 
-        {layoutShow !== "albums" && <>
-            <div className={`layoutSection columns-${desktop} columns-tablet-${tablet} columns-mobile-${mobile}`}>
-                {photos?.map((photo, index) => {
-                    const isVideo = photo?.mimeType.startsWith('video/');
-                    const videoUrl = `${photo?.baseUrl}=dv`;
+        {
+            layoutShow !== "albums" && <>
+                <div className={`layoutSection columns-${desktop} columns-tablet-${tablet} columns-mobile-${mobile}`}>
+                    {photos?.map((photo, index) => {
+                        const isVideo = photo?.mimeType.startsWith('video/');
+                        const videoUrl = `${photo?.baseUrl}=dv`;
 
-                    return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={`${isVideo ? videoUrl : photo?.baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
-                        <div className='img'>
-                            <img src={photo?.baseUrl} alt="" />
-                        </div>
-                    </a>
-                })}
-            </div>
-            {pageToken && <div className='btnArea'>
-                <button onClick={() => PageToken()} className='loadMoreBtn'>Load More</button>
-            </div>}
-        </>}
+                        return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={`${isVideo ? videoUrl : photo?.baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
+                            <div className='img'>
+                                <img src={photo?.baseUrl} alt="" />
+                            </div>
+                        </a>
+                    })}
+                </div>
+                {loading && <h1> Loading...... </h1>}
+                {pageToken && <div className='btnArea'>
+                    <button onClick={() => PageToken()} className='loadMoreBtn'>Load More</button>
+                </div>}
+            </>
+        }
     </>
 };
 

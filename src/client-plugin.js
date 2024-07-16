@@ -1,18 +1,13 @@
 
 import { useEffect, useState } from 'react';
 import { __ } from '@wordpress/i18n';
-import { PanelBody, Button, __experimentalInputControl as InputControl } from '@wordpress/components'
-
+import { PanelBody, Button, __experimentalInputControl as InputControl } from '@wordpress/components';
 const { registerPlugin } = wp.plugins;
 const { PluginSidebar, PluginSidebarMoreMenuItem } = wp.editPost;
-import { generateString } from './utils/functions';
-import gp_prompt from './utils/gp_prompt';
 
 import useWPOptionQuery from './hooks/useWPOptionQuery';
 import useWPAjax from './utils/useWPAjax';
-import { blockIcon, googleIcon } from './utils/icons';
-import { Label } from '../../Components';
-
+import { blockIcon } from './utils/icons';
 
 const bpgpbEvent = new CustomEvent('bpgpbEventEdit');
 
@@ -22,10 +17,10 @@ const RenderPlugin = () => {
     const { client_id = '', client_secret = '', refresh_token = '' } = bpgpbData || {};
 
     // retrieve nonce and authorized if exists 
-    const { data: info, fetchData: refetchSavedToken } = useWPOptionQuery('ajax_info');
+    const { fetchData: refetchSavedToken } = useWPOptionQuery('ajax_info');
 
     // fetch token from bplugins server using ajax
-    const { data: token = null, isLoading, refetch, saveData, error } = useWPAjax('retrieve_refresh_token', { nonce: window.wpApiSettings?.nonce }); //authorize
+    const { data: token = null, isLoading, saveData } = useWPAjax('retrieve_refresh_token', { nonce: window.wpApiSettings?.nonce }); //authorize
 
 
     useEffect(() => {
@@ -42,15 +37,6 @@ const RenderPlugin = () => {
             refetchSavedToken();
         }
     }, [isLoading]);
-
-
-    // unauthorize google account
-    const unAuthorized = () => {
-        saveData({ nonce: info.nonce, un_authorize: true });
-        setTimeout(() => {
-            refetchSavedToken();
-        }, 500);
-    }
 
     const saveInformation = () => {
         saveData({ ...bpgpbData, save: true });

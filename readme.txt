@@ -3,8 +3,8 @@ Contributors: alamincmt
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, photos, google photos, gallery, Gutenberg block
 Requires at least: 5.0+
-Tested up to: 6.5
-Stable tag: 1.0.1
+Tested up to: 6.5.5
+Stable tag: 1.0.2
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -107,6 +107,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.2 - 16 July, 2024 =
+* Load more button update.
+
 = 1.0.1 - 18 May,2024 =
 * Authorization issues fixed.
 
@@ -115,6 +118,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.2 - 16 July, 2024 =
+* Load more button update.
 
 = 1.0.1 - 18 May,2024 =
 * Authorization issues fixed.
