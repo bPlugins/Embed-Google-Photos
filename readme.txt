@@ -1,10 +1,10 @@
 === Embed Google Photos ===
-Contributors: alamincmt
+Contributors:abuhayat,bplugins, btechnologies
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, photos, google photos, gallery, Gutenberg block
 Requires at least: 5.0+
-Tested up to: 6.5.5
-Stable tag: 1.0.2
+Tested up to: 6.6.1
+Stable tag: 1.0.2 
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -103,6 +103,15 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 == Screenshots ==
 
 1. Settings
+2. Default
+3. Favorite
+4. Only Photos
+5. Only Videos
+6. Specific Album
+7. Ratio Square
+8. Ratio Landscape
+9. Ratio Horizontal
+10. Ratio Potrait
 
 
 == Changelog ==
