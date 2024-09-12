@@ -25,7 +25,7 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
                     right: ['slideshow', 'close'],
                 }
             },
-            Thumbs: true,
+            Thumbs: false,
             contentClick: 'toggleZoom',
         });
 
@@ -39,7 +39,7 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
         <div className='backArrow' onClick={() => setSinglePage(false)}>{backArrow}</div>
 
         <div className='bpgpbTopSection'>
-            <a className='item' data-fancybox={`image-gallery-${cId}`} href={`${isVideo ? videoUrl : baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
+            <a className='item' data-fancybox={`image-gallery-${cId}`} href={isVideo ? videoUrl : `${baseUrl}=w1600-h1200`} data-type={`${isVideo ? 'html5video' : ''}`}>
                 <img className='topImg' src={baseUrl} alt="" />
             </a>
             <div className="albumDetails">
@@ -50,7 +50,7 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
                 {photos.slice(1).map((photo, index) => {
                     const isVideo = photo?.mimeType.startsWith('video/');
                     const videoUrl = `${photo?.baseUrl}=dv`;
-                    return <a key={index} data-fancybox={`image-gallery-${cId}`} href={`${isVideo ? videoUrl : photo?.baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
+                    return <a key={index} data-fancybox={`image-gallery-${cId}`} href={isVideo ? videoUrl : `${photo?.baseUrl}=w1600-h1200`} data-type={`${isVideo ? 'html5video' : ''}`}>
                         <img src={photo?.baseUrl} />
                     </a>
                 })}
@@ -62,7 +62,7 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
                 const isVideo = photo?.mimeType.startsWith('video/');
                 const videoUrl = `${photo?.baseUrl}=dv`;
 
-                return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={`${isVideo ? videoUrl : photo?.baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
+                return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={isVideo ? videoUrl : `${photo?.baseUrl}=w1600-h1200`} data-type={`${isVideo ? 'html5video' : ''}`}>
                     <div className='img'>
                         <img src={photo?.baseUrl} alt="" />
                     </div>

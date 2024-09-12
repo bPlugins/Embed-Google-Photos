@@ -19,8 +19,6 @@ const Settings = ({ attributes, setAttributes }) => {
 
 	const { title, isTitle } = album;
 
-	console.log(layoutShow);
-
 	// List of Album 
 	const categoriesOpt = albumList?.map((album) => {
 		return { label: album.title, value: album.id }

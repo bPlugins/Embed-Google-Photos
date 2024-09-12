@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, photos, google photos, gallery, Gutenberg block
 Requires at least: 5.0+
 Tested up to: 6.6.1
-Stable tag: 1.0.2 
+Stable tag: 1.0.3
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -33,10 +33,10 @@ The Embed Google Photos plugin offers a seamless solution for integrating beauti
 - Enjoy!
 
 * For installation help click on Installation Tab
-
+ 
 
 = Feedback =
-- Liked that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:alamincmt7418@gmail.com 'Send feedback')
+- Liked that plugin? Hate it? Want a new feature? [Send me some feedback](mailto:support@bplugins.com 'Send feedback')
 
 
 == Installation ==
@@ -116,6 +116,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 == Changelog ==
 
+= 1.0.3 - 12 sept, 2024 =
+* Fixed the popup image resolution.
+
 = 1.0.2 - 16 July, 2024 =
 * Load more button update.
 
@@ -127,6 +130,9 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Upgrade Notice ==
+
+= 1.0.3 - 12 sept, 2024 =
+* Fixed the popup image resolution.
 
 = 1.0.2 - 16 July, 2024 =
 * Load more button update.

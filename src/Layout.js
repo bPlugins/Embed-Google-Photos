@@ -1,5 +1,4 @@
 
-
 import { useState, useEffect } from 'react';
 import { getAlbumPhotos, getAllPhotos, getFavorite, getSingleAlbumDetails } from './utils/functions';
 import { loadingIcon } from './utils/icons';
@@ -49,7 +48,10 @@ const Layout = ({ attributes, token }) => {
             Toolbar: {
                 display: {
                     left: [],
-                    middle: [],
+                    middle: [
+                         
+         
+                    ],
                     right: ['slideshow', 'close'],
                 }
             },
@@ -109,6 +111,7 @@ const Layout = ({ attributes, token }) => {
             {isTitle && <h2> {title}</h2>}
             <div className={`layoutSection columns-${desktop} columns-tablet-${tablet} columns-mobile-${mobile}`}>
                 {albumList?.map((album, index) => {
+
                     return <div key={index} className='singleAlbum'
                         onClick={() => {
                             clickFetchAlbumData(token, album?.id, null, setLoading);
@@ -140,7 +143,7 @@ const Layout = ({ attributes, token }) => {
                         const isVideo = photo?.mimeType.startsWith('video/');
                         const videoUrl = `${photo?.baseUrl}=dv`;
 
-                        return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={`${isVideo ? videoUrl : photo?.baseUrl}`} data-type={`${isVideo ? 'html5video' : ''}`}>
+                        return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={`${isVideo ? videoUrl : photo?.baseUrl}=w1600-h1200`} data-type={`${isVideo ? 'html5video' : ''}`}>
                             <div className='img'>
                                 <img src={photo?.baseUrl} alt="" />
                             </div>

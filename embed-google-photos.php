@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Embed Google Photos
  * Description: Embed stunning Google Photos galleries directly into your WordPress site with the Google Photos Block plugin.
- * Version: 1.0.2
- * Author: Al Amin
- * Author URI: https://profiles.wordpress.org/alamincmt
+ * Version: 1.0.3
+ * Author: bPlugins
+ * Author URI: http://bplugins.com
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: embed-google-photos
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {exit;}
 if ('localhost' === $_SERVER['HTTP_HOST']) {
     $plugin_version = time();
 } else {
-    $plugin_version = '1.0.2';
+    $plugin_version = '1.0.3';
 
 }
 define('BPGPB_PLUGIN_VERSION', $plugin_version);
@@ -154,17 +154,3 @@ class bpgpb_GooglePhotos
 new bpgpb_GooglePhotos();
 
 require_once plugin_dir_path(__FILE__) . '/GoogleAPI/google-api.php';
-
-
-// add_action('wp_footer', function() {
-     
-//     $info = get_option('bpgpb_auth_info');
-//     echo '<pre>';
-//     print_r( $info );
-//     echo '</pre>';
-         
-//     $token = json_decode(get_option( 'bpgpb-google-photos' ));
-//     echo '<pre>';
-//     print_r( $token );
-//     echo '</pre>';
-// });
