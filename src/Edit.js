@@ -49,6 +49,7 @@ const Edit = (props) => {
 			fetchData();
 		}
 	}, [loadingOnSet]);
+	
 
 	useEffect(() => {
 		const getPhotos = async () => {

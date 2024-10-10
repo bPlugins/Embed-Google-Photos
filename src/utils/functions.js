@@ -84,7 +84,7 @@ export const getAllPhotos = async (accessToken, pageToken, favorite, media, setL
     };
 
     const params = {
-        // pageSize: 20,
+        pageSize: 100,
         pageToken
     };
 
@@ -105,9 +105,7 @@ export const getAllPhotos = async (accessToken, pageToken, favorite, media, setL
             headers,
             params
         })
-        console.log("loading.......")
         setLoading(false);
-
         return response;
     } catch (error) {
         console.error('Error:', error);

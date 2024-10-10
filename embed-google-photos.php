@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Embed Google Photos
  * Description: Embed stunning Google Photos galleries directly into your WordPress site with the Google Photos Block plugin.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {exit;}
 if ('localhost' === $_SERVER['HTTP_HOST']) {
     $plugin_version = time();
 } else {
-    $plugin_version = '1.0.3';
+    $plugin_version = '1.0.4';
 
 }
 define('BPGPB_PLUGIN_VERSION', $plugin_version);

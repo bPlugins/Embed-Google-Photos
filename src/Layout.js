@@ -1,12 +1,12 @@
 
 import { useState, useEffect } from 'react';
-import { getAlbumPhotos, getAllPhotos, getFavorite, getSingleAlbumDetails } from './utils/functions';
+import { getAlbumList, getAlbumPhotos, getAllPhotos, getFavorite, getSingleAlbumDetails } from './utils/functions';
 import { loadingIcon } from './utils/icons';
 import Single from './Components/Single';
 
 const Layout = ({ attributes, token }) => {
 
-    const { cId, columns, photosType, albumList, albumId, mediaType, favorite, layoutShow, album } = attributes;
+    const { cId, columns, photosType,  albumId, mediaType, favorite, layoutShow, album } = attributes;
     const { desktop, tablet, mobile } = columns;
     const [photos, setPhotos] = useState([]);
     const [pageToken, setPageToken] = useState();
@@ -14,6 +14,7 @@ const Layout = ({ attributes, token }) => {
     const [singlePage, setSinglePage] = useState(false);
     const [singleAlbumId, setSingleAlbumId] = useState();
     const [singleAlbumDetails, setSingleAlbumDetails] = useState();
+    const [albumList, setAlbumList] = useState([]);
 
     const { title, isTitle } = album;
 
@@ -48,10 +49,7 @@ const Layout = ({ attributes, token }) => {
             Toolbar: {
                 display: {
                     left: [],
-                    middle: [
-                         
-         
-                    ],
+                    middle: [ ],
                     right: ['slideshow', 'close'],
                 }
             },
@@ -60,6 +58,16 @@ const Layout = ({ attributes, token }) => {
         });
 
     }, []);
+
+    useEffect(() => {
+		const getPhotos = async () => {
+			if (token?.access_token) {
+                const response = await getAlbumList(token?.access_token);
+                setAlbumList( response?.data?.albums );
+			}
+		}
+		getPhotos();
+	}, [token]);
 
     const PageToken = async () => {
 
@@ -90,7 +98,6 @@ const Layout = ({ attributes, token }) => {
         return <div className='loadingIcon'>{loadingIcon}</div>
     }
 
-    // console.log(albumList);
     const clickFetchAlbumData = async (token, albumId, pageToken = null, setLoading) => {
         const photosData = await getAlbumPhotos(token?.access_token, albumId, pageToken, setLoading);
         setPhotos(photosData?.data?.mediaItems);
