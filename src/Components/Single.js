@@ -61,8 +61,9 @@ const Single = ({ attributes, photos, setPhotos, token, albumId, pageToken, setP
             {photos?.map((photo, index) => {
                 const isVideo = photo?.mimeType.startsWith('video/');
                 const videoUrl = `${photo?.baseUrl}=dv`;
+                const imageUrl = `${photo?.baseUrl}=w1600-h1200`;
 
-                return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={isVideo ? videoUrl : `${photo?.baseUrl}=w1600-h1200`} data-type={`${isVideo ? 'html5video' : ''}`}>
+                return <a data-fancybox={`bpgpb-gallery-${cId}`} key={index} className='imgArea' href={isVideo ? videoUrl : imageUrl} data-type={`${isVideo ? 'html5video' : ''}`}>
                     <div className='img'>
                         <img src={photo?.baseUrl} alt="" />
                     </div>

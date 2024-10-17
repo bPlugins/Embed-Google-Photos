@@ -1,0 +1,23 @@
+I attempted to contact you from within the WP Plug-in Directory, but that doesn't work unless I login to WordPress.org. I have a self-hosted webpress site, and do not have a wordpress.org account, to my knowledge or that I was able to successfully login to.
+
+I have some questions regarding your Embed Google Photos plugin:
+
+1) Can all features of the plugin be installed and used on a self-hosted wordpress site?
+
+2) I noticed you named your plugin almost identical to an already existing plugin that has been in the WP Directory for years, by Pavex. His plugin includes the word "Album" after the first 3 words. Do you have any association with Pavex, as I have communicated with him in the past regarding his plugin which I have been using for a couple of years now?
+
+3) Does your plugin require that I provide you with my Google login credentials in order to make it work?
+
+4) Does your plugin use the Google API which requires or gains my Google account account access in order to load content from my account?
+
+5) Can your plugin be used like Pavex's plugin to display content from any SHARED google photos link without having to have API or account privileges?
+
+6) Does your plugin display Videos found in Google Photo Albums that also have pictures in the same album?
+
+7) Does your plugin display annotations made to Google Photos AND Videos? If Yes, how does it display those annotations: for instance, do they show up as captions or are they embedded in or over the photo and videos? If No, are you planning to eventually capture and display annotations?
+
+8) Does your plugin display Text Panels that have been added to Google Photos Albums? If yes, again, how are these displayed or where do they appear?
+
+9) Does your plugin work like a framing of the google photos album, provide an image gallery, allow zooming or full screen of an individual photo or video as a viewer option, and/or allow in container viewing of clicked on videos or photos present in a Google Photos Album?
+
+10) Do you have a working, live, demo giving potential, interested plug-in downloaders the ability to see and explore how your plugin works, prior to installing it?
